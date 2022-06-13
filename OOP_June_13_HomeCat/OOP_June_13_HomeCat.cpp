@@ -1,26 +1,4 @@
-﻿//#include <iostream>
-//#include <algorithm>
-//using namespace std;
-//
-//class Cat
-//{
-//private:
-//    string Name;
-//    int Age;
-//    double Weight;
-//    bool Gender;
-//public:
-//    Cat();
-//
-//};
-//
-//
-//int main()
-//{
-//    Cat p;
-//}
-
-#include <iostream>
+﻿#include <iostream>
 #include <algorithm>
 using namespace std;
 
