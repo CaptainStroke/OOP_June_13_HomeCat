@@ -1,4 +1,9 @@
-﻿int main()
+﻿#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#include "Cat.h"
+int main()
 {
 	Cat p; // создание объекта при помощи конструктора БЕЗ параметров
 	//Cat p("Vaska");
@@ -14,6 +19,7 @@
 }
 
 
+//
 //#include <iostream>
 //#include <algorithm>
 //using namespace std;
@@ -129,4 +135,4 @@
 //	cout << p.GetWeight() << "\n";
 //	cout << p.GetGender() << "\n";
 //}
-
+//

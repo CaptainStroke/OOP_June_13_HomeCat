@@ -1,55 +1,88 @@
 #include "Cat.h"
-void SetName(string n)
+
+Cat::Cat() // рекомендация: в любом классе делаем явно конструктор БЕЗ параметров + хотя бы одна версия конструктора с параметрами
 {
-	if (any_of(n.begin(), n.end(), ::isdigit))
-	{
-		cout << "Incorrect value for parameter name!\n";
-		return;
-	}
-	name = n;
+    SetName("Nicolas");
+    SetAge(1);
+    SetWeight(7);
+    SetGender(true);
 }
 
-void SetAge(int a)
+Cat::Cat(string n)
 {
-	if (a < 0 || a > 120)
-	{
-		cout << "Incorrect value for parameter age!\n";
-		throw "Incorrect age for Cat! Probably Human";
-	}
-	age = a;
+    SetName(n);
+    SetAge(18);
+    SetWeight(75);
+    SetGender(true);
 }
 
-void SetWeight(double w)
+Cat::Cat(string n, int a)
 {
-	if (w < 0 || w > 120)
-	{
-		cout << "Incorrect value for parameter weight!\n";
-		throw "Incorrect weight!";
-	}
-	weight = w;
+    SetName(n);
+    SetAge(a);
+    SetWeight(75);
+    SetGender(true);
 }
 
-void SetGender(bool g)
+Cat::Cat(string n, int a, double w, bool g)
 {
-	gender = g;
+    SetName(n);
+    SetAge(a);
+    SetWeight(w);
+    SetGender(g);
+} // если в классе есть несколько конструкторов, то это называется ПЕРЕГРУЗКА КОНСТРУКТОРОВ
+
+void Cat::SetName(string n)
+{
+    if (any_of(n.begin(), n.end(), ::isdigit))
+    {
+        cout << "Incorrect value for parameter name!\n";
+        return;
+    }
+    name = n;
 }
 
-string GetName() const
+void Cat::SetAge(int a)
 {
-	return name;
+    if (a < 0  || a > 120)
+    {
+        cout << "Incorrect value for parameter age!\n";
+        throw "Incorrect age for Cat! Probably Human";
+    }
+    age = a;
 }
 
-int GetAge() const
+void Cat::SetWeight(double w)
 {
-	return age;
+    if (w < 0  || w > 120)
+    {
+        cout << "Incorrect value for parameter weight!\n";
+        throw "Incorrect weight!";
+    }
+    weight = w;
 }
 
-double GetWeight() const
+void Cat::SetGender(bool g)
 {
-	return weight;
+    gender = g;
 }
 
-bool GetGender() const
+string Cat::GetName() const
 {
-	return gender;
+    return name;
+}
+
+int Cat::GetAge() const
+{
+    return age;
+}
+
+double Cat::GetWeight() const
+{
+    return weight;
+}
+
+bool Cat::GetGender() const
+{
+    return gender;
 }

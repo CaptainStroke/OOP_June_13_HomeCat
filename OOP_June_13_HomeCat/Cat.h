@@ -4,42 +4,22 @@ using namespace std;
 
 class Cat
 {
-private:
-	string Name;
-	int Age;
-	double Weight;
-	bool Gender;
+	string name;
+	int age;
+	double weight;
+	bool gender;
 
 public:
-	Cat() // рекомендация: в любом классе делаем явно конструктор БЕЗ параметров + хотя бы одна версия конструктора с параметрами
-	{
-		SetName("Nicolas");
-		SetAge(1);
-		SetWeight(7);
-		SetGender(true);
-	}
-
-	Cat(string n)
-	{
-		SetName(n);
-		SetAge(18);
-		SetWeight(75);
-		SetGender(true);
-	}
-
-	Cat(string n, int a)
-	{
-		SetName(n);
-		SetAge(a);
-		SetWeight(75);
-		SetGender(true);
-	}
-
-	Cat(string n, int a, double w, bool g)
-	{
-		SetName(n);
-		SetAge(a);
-		SetWeight(w);
-		SetGender(g);
-	} // если в классе есть несколько конструкторов, то это называется ПЕРЕГРУЗКА КОНСТРУКТОРОВ
+	Cat();
+	Cat(string n);
+	Cat(string n, int a);
+	Cat(string n, int a, double w, bool g);
+	void SetName(string n);
+	void SetAge(int a);
+	void SetWeight(double w);
+	void SetGender(bool g);
+	string GetName() const;
+	int GetAge() const;
+	double GetWeight() const;
+	bool GetGender() const;
 };
